@@ -1,0 +1,22 @@
+21
+44J:\learnFront-end\project\nav\src\index.html133027134341942972 0
+35J:\learnFront-end\project\nav\.idea133027171323805711 1
+34J:\learnFront-end\project\nav\dist133027171321073231 1
+36J:\learnFront-end\project\nav\images133027089795773348 1
+43J:\learnFront-end\project\nav\src\style.css133027171319836500 0
+33J:\learnFront-end\project\nav\src133027171319846517 1
+44J:\learnFront-end\project\nav\src\.gitignore133026786868910183 0
+41J:\learnFront-end\project\nav\src\main.js133026784664845651 0
+46J:\learnFront-end\project\nav\.idea\.gitignore133026778191238638 0
+45J:\learnFront-end\project\nav\dist\index.html133027135521124614 0
+41J:\learnFront-end\project\nav\src\test.js133026785571057545 0
+47J:\learnFront-end\project\nav\images\search.png133027089493105956 0
+53J:\learnFront-end\project\nav\dist\index.2cdaf7bc.css133027171321053215 0
+57J:\learnFront-end\project\nav\dist\index.2cdaf7bc.css.map133027171321073231 0
+54J:\learnFront-end\project\nav\dist\search.fa520981.png133027111240890105 0
+52J:\learnFront-end\project\nav\dist\index.de158e3a.js133027111241730870 0
+56J:\learnFront-end\project\nav\dist\index.de158e3a.js.map133027111242061169 0
+47J:\learnFront-end\project\nav\.idea\modules.xml133026778189316963 0
+43J:\learnFront-end\project\nav\.idea\nav.iml133026778188826515 0
+43J:\learnFront-end\project\nav\.idea\vcs.xml133026787131739841 0
+49J:\learnFront-end\project\nav\.idea\workspace.xml133027171323795706 0
