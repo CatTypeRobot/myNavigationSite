@@ -5,23 +5,23 @@ const urlNameObject = JSON.parse(urlName);
 const hashMap = urlNameObject || [
     {
         logo: "G",
-        url: "https://google.com"
+        url: "https://www.google.com"
     },
     {
         logo: "C",
-        url: "https://caniuse.com"
+        url: "https://www.caniuse.com"
     },
     {
         logo: "M",
-        url: "https://developer.mozilla.org"
+        url: "https://www.developer.mozilla.org"
     },
     {
         logo: "W",
-        url: "https://wandoc.com"
+        url: "https://www.wandoc.com"
     },
     {
         logo: "Z",
-        url: "https://zhangxinxu.com"
+        url: "https://www.zhangxinxu.com"
     }
 ];
 const simplifyUrl = (url)=>{
@@ -35,12 +35,12 @@ const render = ()=>{
                     <div class="logo">${node.logo}</div>
                     <div class="link">${simplifyUrl(node.url)}</div>
                     <div class="close">
-                        <img class="closeImg" src="images/close.png" alt="close">
+                        <svg class="closeImg"><use href="#close"></use></svg>
                     </div>
                 </div>
             </li>`).insertBefore($lastLi);
         $li.on("click", ()=>{
-            window.open(node.url);
+            window.open(node.url, "_self");
         });
         $li.on("click", ".close", (event)=>{
             event.stopPropagation();
@@ -50,5 +50,25 @@ const render = ()=>{
     });
 };
 render();
+$(".addButton").on("click", ()=>{
+    let url = window.prompt("\u8BF7\u8F93\u5165\u8981\u6DFB\u52A0\u7684\u7F51\u5740");
+    if (url.indexOf("http") !== 0) url = "https://" + url;
+    hashMap.push({
+        logo: simplifyUrl(url)[0].toUpperCase(),
+        url: url
+    });
+    render();
+});
+window.onbeforeunload = ()=>{
+    const string = JSON.stringify(hashMap);
+    localStorage.setItem("urlName", string);
+};
+$(document).on("keypress", (event)=>{
+    const { key  } = event;
+    for(let i = 0; i < hashMap.length; i++){
+        if (hashMap[i].logo.toLowerCase() === key) window.open(hashMap[i].url, "_blank");
+        else if (hashMap[i].logo.toUpperCase() === key) window.open(hashMap[i].url, "_blank");
+    }
+});
 
 //# sourceMappingURL=index.de158e3a.js.map
