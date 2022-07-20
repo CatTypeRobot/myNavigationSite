@@ -38,7 +38,7 @@ body {
 }
 
 .globalMain {
-    max-width: 900px;
+    max-width: 910px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -95,10 +95,20 @@ body {
 }
 
 .siteList {
+    padding-left: 5px;
+    padding-right: 5px;
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+    .siteList {
+        margin-left: 0;
+        margin-right: -25px;
+        justify-content: flex-start;
+    }
 }
 
 .siteList .defaultSite {
@@ -138,6 +148,13 @@ body {
 
 .siteList > li {
     margin-bottom: 15px;
+}
+
+@media (min-width: 500px) {
+    .siteList > li {
+        margin-bottom: 15px;
+        margin-right: 25px;
+    }
 }
 
 .siteList .addButton {
