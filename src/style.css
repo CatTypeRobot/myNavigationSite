@@ -111,7 +111,7 @@ body {
     }
 }
 
-.siteList .defaultSite {
+.siteList .site {
     /*border: 1px solid blue;*/
     box-shadow: 0 1px 9px 0 rgba(32, 33, 36, 0.28);
     width: 160px;
@@ -126,12 +126,12 @@ body {
     cursor: pointer;
 }
 
-.defaultSite:hover {
+.site:hover {
     box-shadow: 0 5px 5px rgba(32, 33, 36, 0.28);
     transition: all .2s ease-in-out;
 }
 
-.siteList .defaultSite > .logo {
+.siteList .site > .logo {
     width: 64px;
     height: 64px;
     display: flex;
@@ -141,7 +141,7 @@ body {
     text-transform: uppercase;
 }
 
-.siteList .defaultSite > .link {
+.siteList .site > .link {
     font-size: 14px;
     margin-top: 4px;
 }
@@ -182,4 +182,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.siteList .site > .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    display: none;
+    cursor: pointer;
+}
+
+.siteList .site:hover > .close {
+    display: block;
+    transition: all .2s ease-in-out 1s;
+}
+
+.closeImg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -.15em;
+    opacity: 0.75;
+    overflow: hidden;
 }
