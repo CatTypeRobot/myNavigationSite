@@ -1,4 +1,5 @@
 test.js
-.parcel-cache/
 ../package.json
 ../yarn.lock
+../node_modules/
+../.parcel-cache/
