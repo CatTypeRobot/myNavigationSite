@@ -6,7 +6,7 @@ const hashMap = urlNameObject || [    //用hash map保存初始的网站和后�
     {logo: 'G', url: 'https://www.google.com'},
     {logo: 'C', url: 'https://www.caniuse.com'},
     {logo: 'M', url: 'https://www.developer.mozilla.org'},
-    {logo: 'W', url: 'https://www.wandoc.com'},
+    {logo: 'W', url: 'https://www.wangdoc.com'},
     {logo: 'Z', url: 'https://www.zhangxinxu.com'}
 ]
 const simplifyUrl = (url) => {    //格式化网址
@@ -43,15 +43,17 @@ render()
 
 $('.addButton').on('click', () => {    //添加网址功能
     let url = window.prompt('请输入要添加的网址')
-    if (url.indexOf('http') !== 0) {
+    if ((url !== null) && (url.indexOf('http') !== 0)) {    //修复添加网址为空报错的bug
         url = 'https://' + url
-    }
-    hashMap.push(
-        {
-            logo: simplifyUrl(url)[0].toUpperCase(),
-            url: url
+        if (url !== 'https://') {
+            hashMap.push(
+                {
+                    logo: simplifyUrl(url)[0].toUpperCase(),
+                    url: url
+                }
+            )
         }
-    )
+    }
     render()
 })
 
@@ -62,11 +64,13 @@ window.onbeforeunload = () => {    //保存功能
 
 $(document).on('keypress', (event) => {    //按键盘开网页
     const {key} = event
-    for (let i = 0; i < hashMap.length; i++) {
-        if (hashMap[i].logo.toLowerCase() === key) {
-            window.open(hashMap[i].url, '_blank')
-        } else if (hashMap[i].logo.toUpperCase() === key) {
-            window.open(hashMap[i].url, '_blank')
+    if (document.activeElement !== document.getElementById('input')) {
+        for (let i = 0; i < hashMap.length; i++) {
+            if (hashMap[i].logo.toLowerCase() === key) {
+                window.open(hashMap[i].url, '_blank')
+            } else if (hashMap[i].logo.toUpperCase() === key) {
+                window.open(hashMap[i].url, '_blank')
+            }
         }
     }
 })

@@ -17,7 +17,7 @@ const hashMap = urlNameObject || [
     },
     {
         logo: "W",
-        url: "https://www.wandoc.com"
+        url: "https://www.wangdoc.com"
     },
     {
         logo: "Z",
@@ -52,11 +52,13 @@ const render = ()=>{
 render();
 $(".addButton").on("click", ()=>{
     let url = window.prompt("\u8BF7\u8F93\u5165\u8981\u6DFB\u52A0\u7684\u7F51\u5740");
-    if (url.indexOf("http") !== 0) url = "https://" + url;
-    hashMap.push({
-        logo: simplifyUrl(url)[0].toUpperCase(),
-        url: url
-    });
+    if (url !== null && url.indexOf("http") !== 0) {
+        url = "https://" + url;
+        if (url !== "https://") hashMap.push({
+            logo: simplifyUrl(url)[0].toUpperCase(),
+            url: url
+        });
+    }
     render();
 });
 window.onbeforeunload = ()=>{
@@ -65,10 +67,10 @@ window.onbeforeunload = ()=>{
 };
 $(document).on("keypress", (event)=>{
     const { key  } = event;
-    for(let i = 0; i < hashMap.length; i++){
+    if (document.activeElement !== document.getElementById("input")) for(let i = 0; i < hashMap.length; i++){
         if (hashMap[i].logo.toLowerCase() === key) window.open(hashMap[i].url, "_blank");
         else if (hashMap[i].logo.toUpperCase() === key) window.open(hashMap[i].url, "_blank");
     }
 });
 
-//# sourceMappingURL=index.d17191d2.js.map
+//# sourceMappingURL=index.c15679c3.js.map
